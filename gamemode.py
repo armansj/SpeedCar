@@ -1,6 +1,6 @@
-# Camera module will keep track of sprite offset.
+# dorbin chek mikonad ..............
 
-# The gamemode is defined in this module.
+# mode bazi inja tarif shode.
 
 import pygame, maps
 from pygame.locals import *
@@ -16,8 +16,8 @@ COUNTDOWN_FULL = 3600
 COUNTDOWN_EXTEND = 750
 
 
-# This class is used as a single object, which moves around
-# and keeps track of player score. It also manages the countdown timer.
+# in class baraye single object estefade mishe
+#rad giri mikone score. It also manages the countdown timer.va timero neshon mide
 class Finish(pygame.sprite.Sprite):
     # The player has collided and should pick the flag.
     def claim_flag(self):
@@ -26,7 +26,7 @@ class Finish(pygame.sprite.Sprite):
         if self.timeleft > COUNTDOWN_FULL:
             self.timeleft = COUNTDOWN_FULL
 
-    # The player has crashed into another vehicle, deduct some points.
+    # The player has crashed into another vehicle, tasadof ba machine digar.
     def car_crash(self):
         if (self.penalty_cool == 0):
             self.score += CRASH_PENALTY
@@ -44,7 +44,7 @@ class Finish(pygame.sprite.Sprite):
         self.y = y * FULL_TILE + HALF_TILE
         self.rect.topleft = self.x, self.y
 
-    # Reset the state of the timer, score and respawn the flag.
+    # Reset the state of the timer, score and respawn the flag.resatart kardan zaman
     def reset(self):
         self.timeleft = COUNTDOWN_FULL
         self.score = 0
@@ -63,7 +63,7 @@ class Finish(pygame.sprite.Sprite):
         self.score = 0
         self.timeleft = COUNTDOWN_FULL
 
-    # Update the timer and reposition the flag by offset.
+    # Update the timer and tekrar.
     def update(self, cam_x, cam_y):
         self.rect.topleft = self.x - cam_x, self.y - cam_y
         if (self.penalty_cool > 0):
