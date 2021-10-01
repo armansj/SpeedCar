@@ -1,4 +1,4 @@
-#Camera module will keep track of sprite offset.
+#dorbin check mikonad mogheyat machine kojast.
 
 class Camera():
     def __init__(self):
