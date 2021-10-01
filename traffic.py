@@ -35,7 +35,7 @@ def initialize(center_w, center_h):
         cars.append(load_image(car_files[index], True))
 
 
-# Traffic sprite and AI controller.
+# Traffic sprite and AI check.
 class Traffic(pygame.sprite.Sprite):
 
     def road_tile(self):
@@ -46,7 +46,7 @@ class Traffic(pygame.sprite.Sprite):
             y = randint(0, 9)
         return x * 1000 + HALF_TILE, y * 1000 + HALF_TILE
 
-    # Turn the vehicle!
+    # bargasht vasile!
     def turning(self):
         self.turning_cooldown = TURN_LOCK
         try:
@@ -65,18 +65,18 @@ class Traffic(pygame.sprite.Sprite):
                 self.dir = -180 - tile_rot * 90
                 self.dir += randint(-1, 1) * 90
 
-            # crossing controller
+            # arz controller
             if tile_type == maps.crossing:
                 self.dir += randint(1, 3) * 90
 
-            # dead end controller
+            # bakht bazi controller
             if tile_type == maps.deadend:
                 self.dir -= 180
 
         except:
             return
 
-    # Rotate the image.
+    # charkhesh the image.
     def rotate(self):
         self.image, self.rect = rot_center(self.image_orig, self.rect, self.dir)
 
@@ -97,13 +97,13 @@ class Traffic(pygame.sprite.Sprite):
         self.speed = randint(60, 145) / 100
         self.turning_cooldown = 0
 
-    # Update the position.
+    # Update the mogheyat.
     def update(self, cam_x, cam_y):
         """update direction of traffic based on current tile"""
         self.x = self.x + self.speed * math.cos(math.radians(270 - self.dir))
         self.y = self.y + self.speed * math.sin(math.radians(270 - self.dir))
 
-        # trigger turn when vehicle is at center of tile.
+        # bargasht vehicle be markaz.
         if (self.turning_cooldown > 0):
             self.turning_cooldown = self.turning_cooldown - 1
         elif (randint(0, DISPLACEMENT) == 2):
