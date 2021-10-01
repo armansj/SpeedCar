@@ -1,4 +1,4 @@
-# Alert shown vaghti ke machine kharej az map bashad.
+# Alert  NAMAYESH veghti ke machine kharej az map bashad.
 from loader import load_image
 import pygame
 from pygame.locals import *
