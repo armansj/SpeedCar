@@ -8,7 +8,7 @@ from loader import load_image
 LIFETIME = 300
 
 
-# rotate tracks.
+# rotate radgiri.
 def rot_center(image, rect, angle):
     """rotate an image while keeping its center"""
     rot_image = pygame.transform.rotate(image, angle)
@@ -16,7 +16,7 @@ def rot_center(image, rect, angle):
     return rot_image, rot_rect
 
 
-# Initialize, load the tracks image.
+# Initialize, load aks radgiri!.
 def initialize():
     global tracks_img
     tracks_img = load_image('tracks.png', False)
