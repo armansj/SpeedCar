@@ -1,6 +1,6 @@
 # Camera module will keep track of sprite offset.
 
-# Show a dialog when time is out.
+# namayesh dialog vaghti game ejra shod.
 from loader import load_image
 import pygame
 from pygame.locals import *
@@ -9,7 +9,7 @@ NOTE_HALF_X = 212
 NOTE_HALF_Y = 112
 
 
-# Alert body.
+# peygham badane.
 class Alert(pygame.sprite.Sprite):
 
     def __init__(self):
