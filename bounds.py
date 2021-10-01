@@ -1,4 +1,4 @@
-# Alert shown when the car is outside the map.
+# Alert shown vaghti ke machine kharej az map bashad.
 from loader import load_image
 import pygame
 from pygame.locals import *
@@ -9,7 +9,7 @@ NOTE_HALF_X = 211
 NOTE_HALF_Y = 112
 
 
-# check the bounds vs car coordinates.
+# check the bounds vs car check kardan machine baraye inke dar bound bashad.
 def breaking(car_x, car_y):
     if car_x < BOUND_MIN or car_x > BOUND_MAX:
         return True
@@ -18,7 +18,7 @@ def breaking(car_x, car_y):
     return False
 
 
-# alertbox.
+# alertbox baraye inke hoshdar dqr safhe moshakhas shavad.
 class Alert(pygame.sprite.Sprite):
 
     def __init__(self):
