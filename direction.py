@@ -1,5 +1,5 @@
 
-# Show the player where to find the flag.
+# namayesh player flag kojast.
 
 import pygame, math
 from pygame.locals import *
@@ -16,7 +16,7 @@ def rot_center(image, rect, angle):
     return rot_image ,rot_rect
 
 
-# Guide the player with a giant arrow.
+# Guide the player with a big arrow.
 class Tracker(pygame.sprite.Sprite):
 
     def __init__(self, screen_x, screen_y):
