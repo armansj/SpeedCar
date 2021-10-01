@@ -10,7 +10,7 @@ CENTER_X = -1
 CENTER_Y = -1
 
 
-# Rotate car.
+# charkhesh car.
 def rot_center(image, rect, angle):
     """rotate an image while keeping its center"""
     rot_image = pygame.transform.rotate(image, angle)
@@ -27,7 +27,7 @@ def findspawn():
     return x * 1000 + CENTER_X, y * 1000 + CENTER_Y
 
 
-# define car as Player.
+# tarif machine be onvan player.
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -62,15 +62,15 @@ class Player(pygame.sprite.Sprite):
         self.rect.topleft = self.x, self.y
         self.x, self.y = findspawn()
 
-    # Emit tracks..
+    # khat bekesh..
     def emit_tracks(self):
         self.tracks = True
 
-    # Don't emit tracks..
+    # khat nakesh..
     def reset_tracks(self):
         self.tracks = False
 
-    # If the car is on grass, decrease speed and emit tracks.
+    #age machine ro alafe khat bekesh.
     def grass(self, value):
         if value > GRASS_GREEN:
             if self.speed - self.deacceleration > GRASS_SPEED * 2:
@@ -88,20 +88,20 @@ class Player(pygame.sprite.Sprite):
         if self.speed < 0:
             self.speed += self.softening
 
-    # Accelerate the vehicle
+    # moshakhas kardan vehicle
     def accelerate(self):
         if self.speed < self.maxspeed:
             self.speed = self.speed + self.acceleration
             if self.speed < self.maxspeed / 3:
                 self.emit_tracks()
 
-    # Deaccelerate.
+    # namoshaKHAS.
     def deaccelerate(self):
         if self.speed > self.minspeed:
             self.speed = self.speed - self.deacceleration
             self.emit_tracks()
 
-    # Steer.
+    # HEDAYAT.
     def steerleft(self):
         self.dir = self.dir + self.steering
         if self.dir > 360:
@@ -110,7 +110,7 @@ class Player(pygame.sprite.Sprite):
             self.emit_tracks()
         self.image, self.rect = rot_center(self.image_orig, self.rect, self.dir)
 
-    # Steer.
+    # HEDAYAT.
     def steerright(self):
         self.dir = self.dir - self.steering
         if self.dir < 0:
